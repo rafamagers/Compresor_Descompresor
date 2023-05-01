@@ -28,7 +28,7 @@ def base64_to_bin(base64_num):
 
 # Leemos nuestro archivo comprimido y lo separamos por el indice que usamos para separarlos "@"
 hexi = []
-lin = open(r"C:\Users\Saede\Documents\Proyecto compresor\comprimido.elmejorprofesor", 'r').read()
+lin = open(r"/workspaces/Compresor_Descompresor/Archivos/comprimido.elmejorprofesor", "r", encoding="latin-1").read()
 linea = lin.split("@")
 
 # Hacemos un ciclo para leer todas las lineas del archivo hasta el ultimo caractér
@@ -49,7 +49,7 @@ for digit in wr:
     code = ""        
 
 # Se guarda el archivo en la ubicación especificada
-fic = open(r"C:\Users\Saede\Documents\Proyecto compresor\descomprimido-elmejorprofesor.txt", "w")
+fic = open(r"/workspaces/Compresor_Descompresor/Archivos/descomprimido-elmejorprofesor.txt", "w", encoding="latin-1")
 fic.write(uncompressed_string)
 fic.close()
 
