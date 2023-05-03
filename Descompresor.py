@@ -28,7 +28,7 @@ def base64_to_bin(base64_num):
 
 # Leemos nuestro archivo comprimido y lo separamos por el indice que usamos para separarlos "@"
 hexi = []
-lin = open("./Archivos/comprimido.elmejorprofesor", "r", encoding="latin-1").read()
+lin = open("./Archivos/comprimido.elmejorprofesor", "r").read()
 linea = lin.split("@")
 
 # Hacemos un ciclo para leer todas las lineas del archivo hasta el ultimo caractér
@@ -38,19 +38,21 @@ while i < len(linea)-2 :
   letter_binary2[linea[i+1]]=linea[i]
   i=i+2
 wr =linea[len(linea)-2] + base64_to_bin(linea[len(linea)-1])
+wwr = list(wr)
 
-uncompressed_string = ""
+uncompressed_string = []
 code = ""
-
-for digit in wr:
+con = 0
+for digit in wwr:
+  con = con+1
   code = code+digit
   if code in letter_binary2:    
-    uncompressed_string = uncompressed_string+letter_binary2[code]
-    code = ""        
-
+    uncompressed_string.append(letter_binary2[code])
+    code = ""   
+result=''.join(uncompressed_string)     
 # Se guarda el archivo en la ubicación especificada
-fic = open("./Archivos/descomprimido-elmejorprofesor.txt", "w", encoding="latin-1")
-fic.write(uncompressed_string)
+fic = open("./Archivos/descomprimido-elmejorprofesor.txt", "w")
+fic.write(result)
 fic.close()
 
 # Indicadores
