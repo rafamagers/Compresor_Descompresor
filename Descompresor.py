@@ -28,7 +28,7 @@ def base64_to_bin(base64_num):
 
 # Leemos nuestro archivo comprimido y lo separamos por el indice que usamos para separarlos "@"
 hexi = []
-lin = open("./Archivos/comprimido.elmejorprofesor", "r").read()
+lin = open("comprimido.elmejorprofesor", "r").read()
 linea = lin.split("@")
 
 # Hacemos un ciclo para leer todas las lineas del archivo hasta el ultimo caractér
@@ -51,7 +51,7 @@ for digit in wwr:
     code = ""   
 result=''.join(uncompressed_string)     
 # Se guarda el archivo en la ubicación especificada
-fic = open("./Archivos/descomprimido-elmejorprofesor.txt", "w")
+fic = open("descomprimido-elmejorprofesor.txt", "w")
 fic.write(result)
 fic.close()
 

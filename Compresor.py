@@ -8,7 +8,7 @@ start_time = time.time()
 # Se crea una lista de caracteres que va a tener cada linea del archivo a comprimir (Lines),
 # luego usamos otra lista para guardar cada letra (my_string)
 Lines = []
-for line in open("./Archivos/"+sys.argv[1], 'r', encoding="latin-1").readlines():
+for line in open(sys.argv[1], 'r').readlines():
   Lines.append(line)
 my_string=[]
 for h in Lines:
@@ -147,7 +147,7 @@ for i in range(8):
 pint = bin_to_base64(bitstring)
 
 # Generar archivo comprimido
-fic = open("./Archivos/comprimido.elmejorprofesor", "w", encoding="latin-1")
+fic = open("comprimido.elmejorprofesor", "w")
 fic.write(arbol+id+"@"+pint)
 fic.close()
 
